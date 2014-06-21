@@ -32,8 +32,9 @@ public class RestJPA {
        VagaJpaController dao = new VagaJpaController(emf);
        Contato c = new Contato();
        Vaga v = new Vaga();
+       v.setId((long)42);
        v.setContato(c);
-       c.setId((long)5);
+       c.setId((long)4);
        c.setEmail("mddsds@gasd.com");
        c.setNome("mich");
        c.setTelefone("2323233");
