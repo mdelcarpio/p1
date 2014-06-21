@@ -49,6 +49,8 @@ public class Vaga implements Serializable {
     
     private boolean ativo;
 
+    
+    @ManyToOne(cascade = CascadeType.ALL)
     private Contato contato;
     public Contato getContato(){
         return contato;

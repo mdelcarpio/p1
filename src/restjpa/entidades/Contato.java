@@ -8,6 +8,8 @@ package restjpa.entidades;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -38,6 +40,8 @@ public class Contato implements Serializable {
     
     private String telefone;
      
+    @OneToMany(mappedBy="contato", cascade = CascadeType.ALL)
+    private List<Vaga> vagas = new ArrayList<>();
     
     public Long getId() {
         return id;
@@ -112,6 +116,20 @@ public class Contato implements Serializable {
      */
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    /**
+     * @return the vagas
+     */
+    public List<Vaga> getVagas() {
+        return vagas;
+    }
+
+    /**
+     * @param vagas the vagas to set
+     */
+    public void setVagas(List<Vaga> vagas) {
+        this.vagas = vagas;
     }
 
      

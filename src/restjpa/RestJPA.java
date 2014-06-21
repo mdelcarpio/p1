@@ -33,7 +33,7 @@ public class RestJPA {
        Contato c = new Contato();
        Vaga v = new Vaga();
        v.setId((long)42);
-       v.setContato(c);
+       
        c.setId((long)4);
        c.setEmail("mddsds@gasd.com");
        c.setNome("mich");
@@ -42,6 +42,7 @@ public class RestJPA {
        v.setBairro("Rio pequeno");
        v.setCusto("333");
        v.setDataCadastro(Calendar.getInstance());
+       v.setContato(c);
        dao.create(v);
        
        System.out.println(dao.getVagaCount());
