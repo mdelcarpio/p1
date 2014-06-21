@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
 /**
@@ -19,7 +20,7 @@ import javax.persistence.OneToMany;
  * @author Michelet
  */
 @Entity
-public class Contato implements Serializable {
+public class Interessado implements Serializable {
     private static final long serialVersionUID = 1L;
 
     /**
@@ -32,17 +33,15 @@ public class Contato implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String nome;
+      private String nome;
     
     private String email;
     
     private String telefone;
     
-    @OneToMany(mappedBy = "contato")
-    private ArrayList<Vaga> vagasCadastradas;
     
-    
-    
+    @OneToMany
+    private ArrayList<Vaga> vagasInteressantes;
     
     public Long getId() {
         return id;
@@ -55,18 +54,18 @@ public class Contato implements Serializable {
     @Override
     public int hashCode() {
         int hash = 0;
-        hash += (getId() != null ? getId().hashCode() : 0);
+        hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
 
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Contato)) {
+        if (!(object instanceof Interessado)) {
             return false;
         }
-        Contato other = (Contato) object;
-        if ((this.getId() == null && other.getId() != null) || (this.getId() != null && !this.id.equals(other.id))) {
+        Interessado other = (Interessado) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
         return true;
@@ -74,7 +73,7 @@ public class Contato implements Serializable {
 
     @Override
     public String toString() {
-        return "restjpa.Contato[ id=" + getId() + " ]";
+        return "restjpa.entidades.Interessado[ id=" + id + " ]";
     }
 
     /**
@@ -120,19 +119,17 @@ public class Contato implements Serializable {
     }
 
     /**
-     * @return the vagasCadastradas
+     * @return the vagasInteressantes
      */
-    public ArrayList<Vaga> getVagasCadastradas() {
-        return vagasCadastradas;
+    public ArrayList<Vaga> getVagasInteressantes() {
+        return vagasInteressantes;
     }
 
     /**
-     * @param vagasCadastradas the vagasCadastradas to set
+     * @param vagasInteressantes the vagasInteressantes to set
      */
-    public void setVagasCadastradas(ArrayList<Vaga> vagasCadastradas) {
-        this.vagasCadastradas = vagasCadastradas;
+    public void setVagasInteressantes(ArrayList<Vaga> vagasInteressantes) {
+        this.vagasInteressantes = vagasInteressantes;
     }
-
-     
     
 }
