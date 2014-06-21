@@ -40,9 +40,6 @@ public class Interessado implements Serializable {
     private String telefone;
     
     
-    @OneToMany
-    private ArrayList<Vaga> vagasInteressantes;
-    
     public Long getId() {
         return id;
     }
@@ -118,18 +115,6 @@ public class Interessado implements Serializable {
         this.telefone = telefone;
     }
 
-    /**
-     * @return the vagasInteressantes
-     */
-    public ArrayList<Vaga> getVagasInteressantes() {
-        return vagasInteressantes;
-    }
-
-    /**
-     * @param vagasInteressantes the vagasInteressantes to set
-     */
-    public void setVagasInteressantes(ArrayList<Vaga> vagasInteressantes) {
-        this.vagasInteressantes = vagasInteressantes;
-    }
+   
     
 }

@@ -37,12 +37,7 @@ public class Contato implements Serializable {
     private String email;
     
     private String telefone;
-    
-    @OneToMany(mappedBy = "contato")
-    private ArrayList<Vaga> vagasCadastradas;
-    
-    
-    
+     
     
     public Long getId() {
         return id;
@@ -119,20 +114,7 @@ public class Contato implements Serializable {
         this.telefone = telefone;
     }
 
-    /**
-     * @return the vagasCadastradas
-     */
-    public ArrayList<Vaga> getVagasCadastradas() {
-        return vagasCadastradas;
-    }
-
-    /**
-     * @param vagasCadastradas the vagasCadastradas to set
-     */
-    public void setVagasCadastradas(ArrayList<Vaga> vagasCadastradas) {
-        this.vagasCadastradas = vagasCadastradas;
-    }
-
+     
      
     
 }

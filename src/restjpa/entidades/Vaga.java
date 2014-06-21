@@ -49,12 +49,13 @@ public class Vaga implements Serializable {
     
     private boolean ativo;
 
-    
-    @ManyToOne
     private Contato contato;
-    
-    @OneToMany
-    private ArrayList<Interessado> interessados;
+    public Contato getContato(){
+        return contato;
+    }
+    public void setContato (Contato contato){
+        this.contato = contato;
+    }
     
 
     public Long getId() {
@@ -160,33 +161,7 @@ public class Vaga implements Serializable {
         this.ativo = ativo;
     }
 
-    /**
-     * @return the contato
-     */
-    public Contato getContato() {
-        return contato;
-    }
-
-    /**
-     * @param contato the contato to set
-     */
-    public void setContato(Contato contato) {
-        this.contato = contato;
-    }
-
-    /**
-     * @return the interessados
-     */
-    public ArrayList<Interessado> getInteressados() {
-        return interessados;
-    }
-
-    /**
-     * @param interessados the interessados to set
-     */
-    public void setInteressados(ArrayList<Interessado> interessados) {
-        this.interessados = interessados;
-    }
+   
  
     
 }
