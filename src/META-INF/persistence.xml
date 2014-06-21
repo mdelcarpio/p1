@@ -6,12 +6,12 @@
     <class>restjpa.entidades.Contato</class>
     <class>restjpa.entidades.Vaga</class>
     <class>restjpa.entidades.Interessado</class>
+    <shared-cache-mode>ALL</shared-cache-mode>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://143.107.102.3:1433;databaseName=apps"/>
       <property name="javax.persistence.jdbc.user" value="apps"/>
       <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
       <property name="javax.persistence.jdbc.password" value="senhaapps-2014"/>
-      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
     </properties>
   </persistence-unit>
 </persistence>
