@@ -44,6 +44,14 @@ public class Vaga implements Serializable {
     
     private String endereco;
     
+    private String universidade;
+    
+    private String latitude;
+    
+    private String longitude;
+    
+    private String distanciaUniversidadeVaga;
+    
     @Temporal(javax.persistence.TemporalType.DATE)
     private Calendar dataCadastro;
     
@@ -161,6 +169,62 @@ public class Vaga implements Serializable {
      */
     public void setAtivo(boolean ativo) {
         this.ativo = ativo;
+    }
+
+    /**
+     * @return the universidade
+     */
+    public String getUniversidade() {
+        return universidade;
+    }
+
+    /**
+     * @param universidade the universidade to set
+     */
+    public void setUniversidade(String universidade) {
+        this.universidade = universidade;
+    }
+
+    /**
+     * @return the latitude
+     */
+    public String getLatitude() {
+        return latitude;
+    }
+
+    /**
+     * @param latitude the latitude to set
+     */
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    /**
+     * @return the longitude
+     */
+    public String getLongitude() {
+        return longitude;
+    }
+
+    /**
+     * @param longitude the longitude to set
+     */
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
+    /**
+     * @return the distanciaUniversidadeVaga
+     */
+    public String getDistanciaUniversidadeVaga() {
+        return distanciaUniversidadeVaga;
+    }
+
+    /**
+     * @param distanciaUniversidadeVaga the distanciaUniversidadeVaga to set
+     */
+    public void setDistanciaUniversidadeVaga(String distanciaUniversidadeVaga) {
+        this.distanciaUniversidadeVaga = distanciaUniversidadeVaga;
     }
 
    

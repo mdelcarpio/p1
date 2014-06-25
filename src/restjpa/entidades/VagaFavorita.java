@@ -7,43 +7,28 @@
 package restjpa.entidades;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 
 /**
  *
- * @author Michelet
+ * @author administrator
  */
 @Entity
-public class Interessado implements Serializable {
+public class VagaFavorita implements Serializable {
     private static final long serialVersionUID = 1L;
-
-    /**
-     * @return the serialVersionUID
-     */
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-      private String nome;
-    
-    private String email;
-    
-    private String telefone;
-    
-    
     public Long getId() {
         return id;
     }
-
+    
+    private double distanciaInteressadoVaga;
+    
     public void setId(Long id) {
         this.id = id;
     }
@@ -58,10 +43,10 @@ public class Interessado implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Interessado)) {
+        if (!(object instanceof VagaFavorita)) {
             return false;
         }
-        Interessado other = (Interessado) object;
+        VagaFavorita other = (VagaFavorita) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -70,51 +55,21 @@ public class Interessado implements Serializable {
 
     @Override
     public String toString() {
-        return "restjpa.entidades.Interessado[ id=" + id + " ]";
+        return "restjpa.entidades.VagaFavorita[ id=" + id + " ]";
     }
 
     /**
-     * @return the nome
+     * @return the distanciaInteressadoVaga
      */
-    public String getNome() {
-        return nome;
+    public double getDistanciaInteressadoVaga() {
+        return distanciaInteressadoVaga;
     }
 
     /**
-     * @param nome the nome to set
+     * @param distanciaInteressadoVaga the distanciaInteressadoVaga to set
      */
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setDistanciaInteressadoVaga(double distanciaInteressadoVaga) {
+        this.distanciaInteressadoVaga = distanciaInteressadoVaga;
     }
-
-    /**
-     * @return the email
-     */
-    public String getEmail() {
-        return email;
-    }
-
-    /**
-     * @param email the email to set
-     */
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    /**
-     * @return the telefone
-     */
-    public String getTelefone() {
-        return telefone;
-    }
-
-    /**
-     * @param telefone the telefone to set
-     */
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-   
     
 }

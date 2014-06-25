@@ -25,16 +25,15 @@ public class RestJPA {
     /**
      * @param args the command line arguments
      */
-    
+
     public static void main(String[] args) {
         // TODO code application logic here
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("RestJPAPU");
        VagaJpaController dao = new VagaJpaController(emf);
-       Contato c = new Contato();
        Vaga v = new Vaga();
-       
-       
-       
+       Contato c = new Contato();
+
+
        c.setEmail("mddsds@gasd.com");
        c.setNome("mich");
        c.setTelefone("2323233");
@@ -44,9 +43,9 @@ public class RestJPA {
        v.setDataCadastro(Calendar.getInstance());
        v.setContato(c);
        dao.create(v);
-       
+
        System.out.println(dao.getVagaCount());
-       
+
     }
-    
+
 }

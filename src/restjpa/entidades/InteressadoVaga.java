@@ -14,7 +14,7 @@ import javax.persistence.Id;
 
 /**
  *
- * @author administrator
+ * @author michelet
  */
 @Entity
 public class InteressadoVaga implements Serializable {
